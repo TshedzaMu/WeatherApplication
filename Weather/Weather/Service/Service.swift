@@ -8,54 +8,57 @@
 import Foundation
 
 class Service {
-//
-//    typealias currentSuccess = (CurrentWeatherResponse?, _ error: String?) ->()
-//    typealias forecastSuccess = (ForecastWeatherResponse?, _ error: String?) ->()
-//
-//    func getCurrentWeather(long: String, lat: String, completed: @escaping currentSuccess) {
-//        AF.request("https://api.openweathermap.org/data/2.5/weather?q=Johannesburg&appid=578feca10a590e86711974e85a838e7b&units=metric")
-//            .responseJSON { response in
-//                guard response.error == nil else {
-//                    print(response.error!)
-//                    completed(nil, (response.error?.errorDescription)!)
-//                    return
-//                }
-//                guard let data = response.data else {
-//                    print("No Data")
-//                    return
-//                }
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let currentWeather = try decoder.decode(CurrentWeatherResponse.self, from: data)
-//                    completed(currentWeather, nil)
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//    }
-//
-//    func getWeatherForecast(long: String, lat: String, completed: @escaping forecastSuccess) {
-//        AF.request("https://api.openweathermap.org/data/2.5/forecast?q=Johannesburg&appid=578feca10a590e86711974e85a838e7b&units=metric")
-//            .responseJSON { response in
-//                guard response.error == nil else {
-//                    completed(nil, (response.error?.errorDescription)!)
-//                    print(response.error!)
-//                    return
-//                }
-//                guard let data = response.data else {
-//                    print("No Data")
-//                    return
-//                }
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let forecastWeather = try decoder.decode(ForecastWeatherResponse.self, from: data)
-//                    completed(forecastWeather, nil)
-//
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//
-//    }
-//
+    
+    typealias currentSuccess = (CurrentWeatherResponse?, _ error: String?) ->()
+    typealias forecastSuccess = (ForecastWeatherResponse?, _ error: String?) ->()
+    
+    func getCurrentWeather(long: String, lat: String, completed: @escaping currentSuccess) {
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Johannesburg&appid=578feca10a590e86711974e85a838e7b&units=metric")!
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            guard error == nil else {
+                print ("error: \(error!)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data")
+                return
+            }
+            
+            print(data.count)
+            let currentWeather = try? JSONDecoder().decode(CurrentWeatherResponse.self, from: data)
+            
+            DispatchQueue.main.async {
+                completed(currentWeather, nil)
+            }
+        }
+        task.resume()
+    }
+    
+    func getWeatherForecast(long: String, lat: String, completed: @escaping forecastSuccess) {
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?q=Johannesburg&appid=578feca10a590e86711974e85a838e7b&units=metric")!
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            guard error == nil else {
+                print ("error: \(error!)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data")
+                return
+            }
+            
+            print(data.count)
+            let forecastWeather = try? JSONDecoder().decode(ForecastWeatherResponse.self, from: data)
+            
+            DispatchQueue.main.async {
+                completed(forecastWeather, nil)
+            }
+        }
+        task.resume()
+    }
 }
