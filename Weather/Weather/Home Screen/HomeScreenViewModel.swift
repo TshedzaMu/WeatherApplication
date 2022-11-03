@@ -89,15 +89,19 @@ class HomeScreenViewModel {
     }
     
     func fetchWeather(completed: @escaping () ->()) {
-        DispatchQueue.main.async {
-            self.service.getCurrentWeather(long: self.long ?? Float(), lat: self.lat ?? Float()) { (response, error) in
-                self.currentWeather = response ?? CurrentWeatherResponse()
-                completed()
+        if let longitude = long, let lattitude = lat {
+            
+            DispatchQueue.main.async {
+                self.service.getCurrentWeather(long: longitude, lat: lattitude) { (response, error) in
+                    self.currentWeather = response ?? CurrentWeatherResponse()
+                    completed()
+                }
+                self.service.getWeatherForecast(long: self.long ?? Float(), lat: self.lat ?? Float()) { (response, error) in
+                    self.forecastWeather = response ?? ForecastWeatherResponse()
+                    completed()
+                }
             }
-            self.service.getWeatherForecast(long: self.long ?? Float(), lat: self.lat ?? Float()) { (response, error) in
-                self.forecastWeather = response ?? ForecastWeatherResponse()
-                completed()
-            }
+            
         }
     }
 }
