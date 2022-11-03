@@ -14,6 +14,8 @@ class HomeScreenViewModel {
     var currentWeather = CurrentWeatherResponse()
     var forecastWeather = ForecastWeatherResponse()
     var dates = [String]()
+    var long: Float?
+    var lat: Float?
     
     var description: String {
         return currentWeather.weather?.first?.description ?? ""
@@ -88,11 +90,11 @@ class HomeScreenViewModel {
     
     func fetchWeather(completed: @escaping () ->()) {
         DispatchQueue.main.async {
-            self.service.getCurrentWeather(long: "", lat: "" ) { (response, error) in
+            self.service.getCurrentWeather(long: self.long ?? Float(), lat: self.lat ?? Float()) { (response, error) in
                 self.currentWeather = response ?? CurrentWeatherResponse()
                 completed()
             }
-            self.service.getWeatherForecast(long: "", lat: "" ) { (response, error) in
+            self.service.getWeatherForecast(long: self.long ?? Float(), lat: self.lat ?? Float()) { (response, error) in
                 self.forecastWeather = response ?? ForecastWeatherResponse()
                 completed()
             }

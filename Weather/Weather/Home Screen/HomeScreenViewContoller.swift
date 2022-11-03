@@ -25,7 +25,6 @@ class HomeScreeViewContoller: UIViewController {
         super.viewDidLoad()
         wetherTableView.delegate = self
         wetherTableView.dataSource = self
-        //   setupUI()
         
         LocationManager.shared.getUserLocation { location in
             DispatchQueue.main.async {
@@ -33,6 +32,9 @@ class HomeScreeViewContoller: UIViewController {
                 let long = location.coordinate.longitude
                 print(lat)
                 print(long)
+                self.viewModel.lat = Float(lat)
+                self.viewModel.long = Float(long)
+                self.setupUI()
             }
             
         }
