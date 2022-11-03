@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58A93CE0291424B6009B29E2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A93CDF291424B6009B29E2 /* MainTabBarController.swift */; };
+		58A93CE429142523009B29E2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A93CE329142523009B29E2 /* SearchViewController.swift */; };
+		58A93CE629142544009B29E2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A93CE529142544009B29E2 /* SearchViewModel.swift */; };
+		58A93CE82914255E009B29E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A93CE72914255E009B29E2 /* FavoritesViewController.swift */; };
+		58A93CEA29142570009B29E2 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A93CE929142570009B29E2 /* FavoritesViewModel.swift */; };
 		58BC27D92912F51600FEC46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC27D82912F51600FEC46A /* AppDelegate.swift */; };
 		58BC27DB2912F51600FEC46A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC27DA2912F51600FEC46A /* SceneDelegate.swift */; };
 		58BC27F02912F51900FEC46A /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC27EF2912F51900FEC46A /* WeatherTests.swift */; };
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58A93CDF291424B6009B29E2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		58A93CE329142523009B29E2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		58A93CE529142544009B29E2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		58A93CE72914255E009B29E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		58A93CE929142570009B29E2 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		58BC27D52912F51600FEC46A /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BC27D82912F51600FEC46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58BC27DA2912F51600FEC46A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +100,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58A93CDE29142488009B29E2 /* Main Tab bar Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58A93CDF291424B6009B29E2 /* MainTabBarController.swift */,
+			);
+			path = "Main Tab bar Controller";
+			sourceTree = "<group>";
+		};
+		58A93CE1291424D6009B29E2 /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+				58A93CE529142544009B29E2 /* SearchViewModel.swift */,
+				58A93CE329142523009B29E2 /* SearchViewController.swift */,
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
+		58A93CE2291424EC009B29E2 /* Favorites Screen */ = {
+			isa = PBXGroup;
+			children = (
+				58A93CE72914255E009B29E2 /* FavoritesViewController.swift */,
+				58A93CE929142570009B29E2 /* FavoritesViewModel.swift */,
+			);
+			path = "Favorites Screen";
+			sourceTree = "<group>";
+		};
 		58BC27CC2912F51600FEC46A = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +149,9 @@
 		58BC27D72912F51600FEC46A /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				58A93CE2291424EC009B29E2 /* Favorites Screen */,
+				58A93CE1291424D6009B29E2 /* Search Screen */,
+				58A93CDE29142488009B29E2 /* Main Tab bar Controller */,
 				58BC2821291300F800FEC46A /* Location Manger */,
 				58BC28202912FD5500FEC46A /* App Delegate */,
 				58BC281D2912F6DB00FEC46A /* Service */,
@@ -327,11 +366,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A93CEA29142570009B29E2 /* FavoritesViewModel.swift in Sources */,
 				58BC28112912F58A00FEC46A /* WeatherTableViewCell.swift in Sources */,
 				58BC28162912F5A100FEC46A /* SplashScreenViewController.swift in Sources */,
+				58A93CE82914255E009B29E2 /* FavoritesViewController.swift in Sources */,
+				58A93CE0291424B6009B29E2 /* MainTabBarController.swift in Sources */,
 				58BC28232913011000FEC46A /* LocationManager.swift in Sources */,
 				58BC28102912F58A00FEC46A /* HomeScreenViewContoller.swift in Sources */,
+				58A93CE629142544009B29E2 /* SearchViewModel.swift in Sources */,
 				58BC280E2912F58A00FEC46A /* HomeScreenViewModel.swift in Sources */,
+				58A93CE429142523009B29E2 /* SearchViewController.swift in Sources */,
 				58BC28172912F5A100FEC46A /* SplashScreenViewModel.swift in Sources */,
 				58BC27D92912F51600FEC46A /* AppDelegate.swift in Sources */,
 				58BC281F2912F6F500FEC46A /* Service.swift in Sources */,

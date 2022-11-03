@@ -3,12 +3,13 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home Scree View Contoller-->
         <scene sceneID="GZD-2g-dQW">
             <objects>
                 <viewController id="ehd-uw-Kck" customClass="HomeScreeViewContoller" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +144,9 @@
                             <constraint firstItem="yX6-Fe-Lnb" firstAttribute="leading" secondItem="nvl-co-qcD" secondAttribute="leading" id="yof-l5-5M0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1i8-p2-B4A"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="1i8-p2-B4A">
+                        <imageReference key="selectedImage" image="house" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="currentTempLabel" destination="kTU-aj-k4J" id="r2M-um-9oK"/>
                         <outlet property="mainCurrentLabel" destination="s1P-cO-nB3" id="2nX-ux-rvY"/>
@@ -157,28 +160,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fh-Yr-6xQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.125" y="182.74647887323943"/>
+            <point key="canvasLocation" x="-1478" y="518"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Vpp-bJ-aTT">
+            <objects>
+                <viewController id="ygz-fd-rib" customClass="SearchViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DJF-ln-AO4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MjO-Fs-yUh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" selectedImage="magnifyingglass" catalog="system" systemItem="search" id="M5K-hD-66o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsC-KI-sqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-369" y="518"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="Xlc-ct-HH0">
+            <objects>
+                <viewController id="3cI-0u-BpK" customClass="FavoritesViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QNR-9W-6BJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="c1d-uK-jye"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="x9F-7w-rsW">
+                        <imageReference key="selectedImage" image="star.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTb-7w-gse" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="518"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iwt-WT-VZq">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JHE-PP-PPT" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ECE-Sl-Vve"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DXL-Ha-gGI">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="ehd-uw-Kck" kind="relationship" relationship="viewControllers" id="Mg4-6H-Gzg"/>
+                        <segue destination="ygz-fd-rib" kind="relationship" relationship="viewControllers" id="rzF-XZ-DPi"/>
+                        <segue destination="3cI-0u-BpK" kind="relationship" relationship="viewControllers" id="MOk-oV-fku"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flG-Y3-axk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-864.375" y="182.74647887323943"/>
+            <point key="canvasLocation" x="-345" y="-311"/>
         </scene>
     </scenes>
     <resources>
         <image name="clearIcon" width="13" height="13"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
