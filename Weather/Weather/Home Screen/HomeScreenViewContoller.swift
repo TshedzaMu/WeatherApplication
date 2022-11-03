@@ -7,11 +7,9 @@
 
 import Foundation
 import UIKit
-import CoreLocation
 
 class HomeScreeViewContoller: UIViewController {
-    
-    
+
     @IBOutlet private var mainCurrentLabel: UILabel!
     @IBOutlet private var mainDescriptionLabel: UILabel!
     @IBOutlet private var wetherTableView: UITableView!
@@ -22,18 +20,21 @@ class HomeScreeViewContoller: UIViewController {
     @IBOutlet weak var mainWeatherStackView: UIStackView!
     
     private lazy var viewModel = HomeScreenViewModel()
-    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         wetherTableView.delegate = self
         wetherTableView.dataSource = self
-        setupUI()
+        //   setupUI()
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+        LocationManager.shared.getUserLocation { location in
+            DispatchQueue.main.async {
+                let lat = location.coordinate.latitude
+                let long = location.coordinate.longitude
+                print(lat)
+                print(long)
+            }
+            
         }
     }
     
@@ -46,7 +47,7 @@ class HomeScreeViewContoller: UIViewController {
             self.maximimTempLabel.text = ("\(self.viewModel.maxTemp)\("℃")")
             self.setupViewTheme(mainCondition: self.viewModel.mainWeatherDescription)
             self.wetherTableView.reloadData()
-       }
+        }
     }
     
     private func setupViewTheme(mainCondition: String) {
@@ -59,7 +60,7 @@ class HomeScreeViewContoller: UIViewController {
             mainWeatherImageView.image = UIImage(named: "sunny")
             mainWeatherStackView.backgroundColor = viewModel.hexStringToUIColor(hex: "#3BA0FD")
             view.backgroundColor = viewModel.hexStringToUIColor(hex: "#3BA0FD")
-    
+            
         case "Rain":
             mainWeatherImageView.image = UIImage(named: "rainny")
             mainWeatherStackView.backgroundColor = viewModel.hexStringToUIColor(hex: "#878787")
@@ -87,13 +88,5 @@ extension HomeScreeViewContoller: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(70)
-    }
-}
-
-extension HomeScreeViewContoller: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print(location.coordinate)
-        }
     }
 }
