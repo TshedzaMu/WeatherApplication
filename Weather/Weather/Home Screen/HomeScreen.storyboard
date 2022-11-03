@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ehd-uw-Kck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHE-PP-PPT">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Scree View Contoller-->
+        <!--Item-->
         <scene sceneID="GZD-2g-dQW">
             <objects>
                 <viewController id="ehd-uw-Kck" customClass="HomeScreeViewContoller" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,11 +57,11 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bEC-Th-3qY">
-                                <rect key="frame" x="0.0" y="366" width="320" height="202"/>
+                                <rect key="frame" x="0.0" y="366" width="320" height="153"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WEATHER_CELL" rowHeight="72" id="LC2-L8-U5W" customClass="WeatherTableViewCell" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="72"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LC2-L8-U5W" id="xJY-nO-8OI">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
@@ -143,6 +143,7 @@
                             <constraint firstItem="yX6-Fe-Lnb" firstAttribute="leading" secondItem="nvl-co-qcD" secondAttribute="leading" id="yof-l5-5M0"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="1i8-p2-B4A"/>
                     <connections>
                         <outlet property="currentTempLabel" destination="kTU-aj-k4J" id="r2M-um-9oK"/>
                         <outlet property="mainCurrentLabel" destination="s1P-cO-nB3" id="2nX-ux-rvY"/>
@@ -155,6 +156,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Fh-Yr-6xQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.125" y="182.74647887323943"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="iwt-WT-VZq">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JHE-PP-PPT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DXL-Ha-gGI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ehd-uw-Kck" kind="relationship" relationship="viewControllers" id="Mg4-6H-Gzg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flG-Y3-axk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-864.375" y="182.74647887323943"/>
         </scene>
