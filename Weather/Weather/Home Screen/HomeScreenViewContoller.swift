@@ -59,10 +59,9 @@ class HomeScreeViewContoller: UIViewController {
             mainWeatherStackView.backgroundColor = viewModel.hexStringToUIColor(hex: "#9AB5CF")
             view.backgroundColor = viewModel.hexStringToUIColor(hex: "#9AB5CF")
         case "Clear":
-            mainWeatherImageView.image = UIImage(named: "sunny")
+            mainWeatherImageView.image = UIImage(named: "Sunny")
             mainWeatherStackView.backgroundColor = viewModel.hexStringToUIColor(hex: "#3BA0FD")
             view.backgroundColor = viewModel.hexStringToUIColor(hex: "#3BA0FD")
-            
         case "Rain":
             mainWeatherImageView.image = UIImage(named: "rainny")
             mainWeatherStackView.backgroundColor = viewModel.hexStringToUIColor(hex: "#878787")

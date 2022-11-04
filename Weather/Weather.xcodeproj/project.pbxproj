@@ -111,8 +111,8 @@
 		58A93CE1291424D6009B29E2 /* Search Screen */ = {
 			isa = PBXGroup;
 			children = (
-				58A93CE529142544009B29E2 /* SearchViewModel.swift */,
 				58A93CE329142523009B29E2 /* SearchViewController.swift */,
+				58A93CE529142544009B29E2 /* SearchViewModel.swift */,
 			);
 			path = "Search Screen";
 			sourceTree = "<group>";
