@@ -12,9 +12,10 @@ class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var favoritesTableView: UITableView!
     
-    //var delegate: MainTabBarDelegate?
+    var delegate: MainTabBarDelegate?
     
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var NoFavouritesText: UILabel!
     var viewModel = FavoritesViewModel()
     
     override func viewDidLoad() {
@@ -25,26 +26,16 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-   //     self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundC.png") ?? UIImage())
         setupView()
     }
-    
-    //    func showNoFavoriteMessage() {
-    //        guard let view = CountriesDetailsView.loadView() else { return }
-    //        view.setupView(details: viewModel.noFavoriteMessage)
-    //        view.backgroundColor = .white
-    //        stackView.addArrangedSubview(view)
-    //    }
-    
+
     func setupView() {
         viewModel.resetFavorites()
         if viewModel.favoriteListCount == 0 {
-            //  clearStackView()
-            // showNoFavoriteMessage()
+            NoFavouritesText.text = "No favorite weather locations"
             favoritesTableView.isHidden = true
         } else {
-            // clearStackView()
-            // favoritesTableView.isHidden = false
+            favoritesTableView.isHidden = false
             favoritesTableView.reloadData()
         }
     }
@@ -69,7 +60,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCountry =  viewModel.favoritesList[indexPath.row]
-        //  delegate?.transitionToHomeScreen(with: selectedCountry)
+        let selectedWeatherLocation =  viewModel.favoritesList[indexPath.row]
+        delegate?.transitionToHomeScreen(with: selectedWeatherLocation)
     }
 }

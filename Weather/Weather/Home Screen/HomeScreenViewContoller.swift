@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeScreeViewContoller: UIViewController {
+class HomeScreenViewContoller: UIViewController {
     
     @IBOutlet private var mainCurrentLabel: UILabel!
     @IBOutlet private var mainDescriptionLabel: UILabel!
@@ -72,13 +72,18 @@ class HomeScreeViewContoller: UIViewController {
         }
     }
     
+    func update(with currentWeather: CurrentWeatherResponse?) {
+        viewModel.currentWeather = currentWeather ?? CurrentWeatherResponse()
+      //  updateData()
+    }
+    
     @IBAction private func addToFavorites(_ sender: Any) {
         viewModel.updateFavorites()
         favoriteButton.imageView?.image = viewModel.rightBarButtonImage()
     }
 }
 
-extension HomeScreeViewContoller: UITableViewDelegate, UITableViewDataSource {
+extension HomeScreenViewContoller: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.listCount
