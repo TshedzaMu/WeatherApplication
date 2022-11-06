@@ -73,9 +73,8 @@ class HomeScreeViewContoller: UIViewController {
     }
     
     @IBAction private func addToFavorites(_ sender: Any) {
-        //viewModel.savefavorite(weather: viewModel.currentWeather)
         viewModel.updateFavorites()
-        //  favoriteButton = viewModel.rightBarButtonImage()
+        favoriteButton.imageView?.image = viewModel.rightBarButtonImage()
     }
 }
 

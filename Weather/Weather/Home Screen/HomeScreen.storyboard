@@ -255,7 +255,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wm1-ko-xbK">
-                                <rect key="frame" x="0.0" y="55" width="320" height="513"/>
+                                <rect key="frame" x="0.0" y="75" width="320" height="493"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBlueColor"/>
                                 <prototypes>
@@ -291,7 +291,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJc-44-Mtk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="ZuS-0M-SxO"/>
@@ -299,18 +299,19 @@
                                 <items>
                                     <navigationItem title="Favotrite locations" id="N7N-Tp-RuF"/>
                                 </items>
+                                <navigationBarAppearance key="standardAppearance"/>
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c1d-uK-jye"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wm1-ko-xbK" firstAttribute="leading" secondItem="QNR-9W-6BJ" secondAttribute="leading" id="9cg-TU-nSe"/>
+                            <constraint firstItem="VJc-44-Mtk" firstAttribute="top" secondItem="QNR-9W-6BJ" secondAttribute="top" constant="20" id="BQ3-e6-5j9"/>
                             <constraint firstAttribute="bottom" secondItem="wm1-ko-xbK" secondAttribute="bottom" id="Ccz-So-JPh"/>
-                            <constraint firstAttribute="trailing" secondItem="VJc-44-Mtk" secondAttribute="trailing" id="VUb-g9-Czp"/>
+                            <constraint firstItem="VJc-44-Mtk" firstAttribute="leading" secondItem="QNR-9W-6BJ" secondAttribute="leading" id="Hsk-Pk-K8f"/>
+                            <constraint firstAttribute="trailing" secondItem="VJc-44-Mtk" secondAttribute="trailing" id="NiS-gV-MPF"/>
                             <constraint firstAttribute="trailing" secondItem="wm1-ko-xbK" secondAttribute="trailing" id="YK6-2u-mLz"/>
                             <constraint firstItem="wm1-ko-xbK" firstAttribute="top" secondItem="VJc-44-Mtk" secondAttribute="bottom" id="b7n-7V-6gb"/>
-                            <constraint firstItem="VJc-44-Mtk" firstAttribute="top" secondItem="QNR-9W-6BJ" secondAttribute="top" id="cKt-Gh-jo4"/>
-                            <constraint firstItem="VJc-44-Mtk" firstAttribute="leading" secondItem="QNR-9W-6BJ" secondAttribute="leading" id="yek-Da-kBB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="x9F-7w-rsW">
