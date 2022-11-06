@@ -159,7 +159,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentTempLabel" destination="kTU-aj-k4J" id="r2M-um-9oK"/>
-                        <outlet property="favoriteButton" destination="EzV-QS-aiK" id="Wpr-A0-uLH"/>
+                        <outlet property="favoriteButton" destination="SF4-RA-0Om" id="4Bt-Sb-hvV"/>
                         <outlet property="mainCurrentLabel" destination="s1P-cO-nB3" id="2nX-ux-rvY"/>
                         <outlet property="mainDescriptionLabel" destination="IJz-4S-OSU" id="KEz-Zg-x4C"/>
                         <outlet property="mainWeatherImageView" destination="mNb-rv-3ff" id="GrP-a6-goI"/>
@@ -253,14 +253,14 @@
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBlueColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FAVORITE_WEATHER_CELL" id="k4a-MX-Qbh" customClass="FavoriteWeatherTableViewCell" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="320" height="48"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="48.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k4a-MX-Qbh" id="lps-0W-RO8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="48.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTK-z6-Z1a">
-                                                    <rect key="frame" x="10" y="10" width="300" height="28"/>
+                                                    <rect key="frame" x="10" y="10" width="300" height="28.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

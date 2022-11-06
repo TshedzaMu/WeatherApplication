@@ -19,8 +19,6 @@ extension UserDefaults {
             do {
                 let decoder = JSONDecoder()
                 let weatherLocations = try decoder.decode([CurrentWeatherResponse].self, from: data)
-                print("Retrieved")
-                print(weatherLocations)
                 return weatherLocations
             } catch {
                 return []
@@ -31,9 +29,8 @@ extension UserDefaults {
                 let encoder = JSONEncoder()
                 let data = try encoder.encode(newValue)
                 UserDefaults.standard.set(data, forKey: Keys.favorites)
-                print("Saved")
             } catch {
-                print("Unable to Encode countires (\(error))")
+                print("Unable to Encode weather data (\(error))")
             }        }
     }
     

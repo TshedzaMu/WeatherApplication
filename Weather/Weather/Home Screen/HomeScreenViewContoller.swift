@@ -18,7 +18,8 @@ class HomeScreenViewContoller: UIViewController {
     @IBOutlet private var maximimTempLabel: UILabel!
     @IBOutlet private weak var mainWeatherImageView: UIImageView!
     @IBOutlet private weak var mainWeatherStackView: UIStackView!
-    @IBOutlet private weak var favoriteButton: UIButton!
+    @IBOutlet private weak var favoriteButton: UIBarButtonItem!
+
     
     private lazy var viewModel = HomeScreenViewModel()
     
@@ -26,6 +27,7 @@ class HomeScreenViewContoller: UIViewController {
         super.viewDidLoad()
         wetherTableView.delegate = self
         wetherTableView.dataSource = self
+        favoriteButton.tintColor = .blue
         
         LocationManager.shared.getUserLocation { location in
             DispatchQueue.main.async {
@@ -40,14 +42,19 @@ class HomeScreenViewContoller: UIViewController {
     
     private func setupUI() {
         viewModel.fetchWeather {
-            self.mainCurrentLabel.text = ("\(self.viewModel.currentTemp)\("℃")")
-            self.currentTempLabel.text = ("\(self.viewModel.currentTemp)\("℃")")
-            self.mainDescriptionLabel.text = self.viewModel.description
-            self.minimumTempLabel.text = ("\(self.viewModel.minTemp)\("℃")")
-            self.maximimTempLabel.text = ("\(self.viewModel.maxTemp)\("℃")")
-            self.setupViewTheme(mainCondition: self.viewModel.mainWeatherDescription)
-            self.wetherTableView.reloadData()
+            self.updateData()
         }
+    }
+    
+    func updateData() {
+        favoriteButton.image = viewModel.rightBarButtonImage()
+        self.mainCurrentLabel.text = ("\(self.viewModel.currentTemp)\("℃")")
+        self.currentTempLabel.text = ("\(self.viewModel.currentTemp)\("℃")")
+        self.mainDescriptionLabel.text = self.viewModel.description
+        self.minimumTempLabel.text = ("\(self.viewModel.minTemp)\("℃")")
+        self.maximimTempLabel.text = ("\(self.viewModel.maxTemp)\("℃")")
+        self.setupViewTheme(mainCondition: self.viewModel.mainWeatherDescription)
+        self.wetherTableView.reloadData()
     }
     
     private func setupViewTheme(mainCondition: String) {
@@ -71,12 +78,12 @@ class HomeScreenViewContoller: UIViewController {
     
     func update(with currentWeather: CurrentWeatherResponse?) {
         viewModel.currentWeather = currentWeather ?? CurrentWeatherResponse()
-      //  updateData()
+        updateData()
     }
     
     @IBAction private func addToFavorites(_ sender: Any) {
         viewModel.updateFavorites()
-        favoriteButton.imageView?.image = viewModel.rightBarButtonImage()
+        favoriteButton.image = viewModel.rightBarButtonImage()
     }
 }
 
