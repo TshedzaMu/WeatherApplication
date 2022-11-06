@@ -27,29 +27,29 @@ class HomeScreenViewModel {
     
     var currentTemp: String {
         guard let currentTemp = currentWeather.main?.temp else {
-              return ""
-          }
+            return ""
+        }
         return String(format:"%.0f", currentTemp)
     }
     
     var minTemp: String {
         guard let mainTemp = currentWeather.main?.temp_min else {
-              return ""
-          }
+            return ""
+        }
         return String(format:"%.0f", mainTemp)
     }
     
     var maxTemp: String {
         guard let maxTemp = currentWeather.main?.temp_max else {
-              return ""
-          }
+            return ""
+        }
         return String(format:"%.0f", maxTemp)
     }
     
     var listCount: Int {
         return forecastWeather.list?.count ?? Int()
     }
-        
+    
     var weatherArray: [Forecast] {
         return forecastWeather.list ?? []
     }
@@ -58,8 +58,8 @@ class HomeScreenViewModel {
         var temps = [String]()
         for weather in weatherArray {
             guard let forecastTemp = weather.main?.temp else {
-                  return []
-              }
+                return []
+            }
             let temp = String(format:"%.0f", forecastTemp)
             temps.append(temp)
         }
@@ -68,24 +68,47 @@ class HomeScreenViewModel {
     
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-
+        
         if (cString.hasPrefix("#")) {
             cString.remove(at: cString.startIndex)
         }
-
+        
         if ((cString.count) != 6) {
             return UIColor.gray
         }
-
+        
         var rgbValue:UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
-
+        
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+    
+    func savefavorite(weather: CurrentWeatherResponse) {
+        UserDefaults.addToFavorites(weather)
+    }
+    
+    func updateFavorites() {
+        if UserDefaults.isFavorite(currentWeather) {
+            removeFromFavorites(country: currentWeather)
+        } else {
+            savefavorite(weather: currentWeather)
+        }
+    }
+    
+    func rightBarButtonImage() -> UIImage? {
+        if UserDefaults.isFavorite(currentWeather) {
+            return UIImage(systemName: "star.fill")
+        }
+        return UIImage(systemName: "star")
+    }
+    
+    func removeFromFavorites(country: CurrentWeatherResponse) {
+        UserDefaults.savedfavorites.removeAll(where: { $0.name == country.name })
     }
     
     func fetchWeather(completed: @escaping () ->()) {

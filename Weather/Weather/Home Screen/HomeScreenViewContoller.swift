@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class HomeScreeViewContoller: UIViewController {
-
+    
     @IBOutlet private var mainCurrentLabel: UILabel!
     @IBOutlet private var mainDescriptionLabel: UILabel!
     @IBOutlet private var wetherTableView: UITableView!
@@ -18,6 +18,7 @@ class HomeScreeViewContoller: UIViewController {
     @IBOutlet private var maximimTempLabel: UILabel!
     @IBOutlet weak var mainWeatherImageView: UIImageView!
     @IBOutlet weak var mainWeatherStackView: UIStackView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     private lazy var viewModel = HomeScreenViewModel()
     
@@ -69,6 +70,12 @@ class HomeScreeViewContoller: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction private func addToFavorites(_ sender: Any) {
+        //viewModel.savefavorite(weather: viewModel.currentWeather)
+        viewModel.updateFavorites()
+        //  favoriteButton = viewModel.rightBarButtonImage()
     }
 }
 

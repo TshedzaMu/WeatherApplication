@@ -28,6 +28,8 @@
 		58BC281C2912F5DC00FEC46A /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC281B2912F5DC00FEC46A /* WeatherResponse.swift */; };
 		58BC281F2912F6F500FEC46A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC281E2912F6F500FEC46A /* Service.swift */; };
 		58BC28232913011000FEC46A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BC28222913011000FEC46A /* LocationManager.swift */; };
+		58C7F8C8291549D400882280 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7F8C7291549D400882280 /* Extensions.swift */; };
+		58C7F8CA2915540500882280 /* FavoriteWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7F8C92915540500882280 /* FavoriteWeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		58BC281B2912F5DC00FEC46A /* WeatherResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		58BC281E2912F6F500FEC46A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		58BC28222913011000FEC46A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		58C7F8C7291549D400882280 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		58C7F8C92915540500882280 /* FavoriteWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			children = (
 				58A93CE72914255E009B29E2 /* FavoritesViewController.swift */,
 				58A93CE929142570009B29E2 /* FavoritesViewModel.swift */,
+				58C7F8C92915540500882280 /* FavoriteWeatherTableViewCell.swift */,
 			);
 			path = "Favorites Screen";
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 		58BC27D72912F51600FEC46A /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				58C7F8C62915498000882280 /* Extensions */,
 				58A93CE2291424EC009B29E2 /* Favorites Screen */,
 				58A93CE1291424D6009B29E2 /* Search Screen */,
 				58A93CDE29142488009B29E2 /* Main Tab bar Controller */,
@@ -233,6 +239,14 @@
 				58BC28222913011000FEC46A /* LocationManager.swift */,
 			);
 			path = "Location Manger";
+			sourceTree = "<group>";
+		};
+		58C7F8C62915498000882280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				58C7F8C7291549D400882280 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,8 +391,10 @@
 				58BC280E2912F58A00FEC46A /* HomeScreenViewModel.swift in Sources */,
 				58A93CE429142523009B29E2 /* SearchViewController.swift in Sources */,
 				58BC28172912F5A100FEC46A /* SplashScreenViewModel.swift in Sources */,
+				58C7F8C8291549D400882280 /* Extensions.swift in Sources */,
 				58BC27D92912F51600FEC46A /* AppDelegate.swift in Sources */,
 				58BC281F2912F6F500FEC46A /* Service.swift in Sources */,
+				58C7F8CA2915540500882280 /* FavoriteWeatherTableViewCell.swift in Sources */,
 				58BC281C2912F5DC00FEC46A /* WeatherResponse.swift in Sources */,
 				58BC27DB2912F51600FEC46A /* SceneDelegate.swift in Sources */,
 			);

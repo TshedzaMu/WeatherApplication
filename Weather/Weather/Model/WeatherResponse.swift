@@ -7,29 +7,34 @@
 
 import Foundation
 
-struct CurrentWeatherResponse: Decodable {
+struct CurrentWeatherResponse: Codable, Equatable {
+    static func == (lhs: CurrentWeatherResponse, rhs: CurrentWeatherResponse) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    var name: String?
     var main: MainData?
     var weather: [WeatherData]?
 }
 
-struct WeatherData: Decodable {
+struct WeatherData: Codable {
     var main: String?
     var description: String?
 }
 
-struct MainData: Decodable {
+struct MainData: Codable {
     var temp_max: Double?
     var temp: Double?
     var feels_like: Double?
     var temp_min: Double?
 }
 
-struct Forecast: Decodable {
+struct Forecast: Codable {
     var dt_txt: String?
     var main: MainData?
     var weather: [WeatherData]?
 }
 
-struct ForecastWeatherResponse: Decodable {
+struct ForecastWeatherResponse: Codable {
     var list: [Forecast]?
 }

@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96B78927-F4EA-4051-8748-8F6A818667E7"
-            shouldBeEnabled = "No"
+            uuid = "A061FEBC-252F-49BF-8A7F-19D15FC2A1E5"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather/Home Screen/HomeScreenViewContoller.swift"
+            filePath = "Weather/Extensions/Extensions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setupUI()"
-            landmarkType = "7">
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "UserDefaults"
+            landmarkType = "21">
+            <Locations>
+               <Location
+                  uuid = "A061FEBC-252F-49BF-8A7F-19D15FC2A1E5 - 56a2e9d6a8cf7c00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static __C.NSUserDefaults.savedfavorites.modify : Swift.Array&lt;Weather.CurrentWeatherResponse&gt;"
+                  moduleName = "Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tshedzamusandiwa/Documents/WeatherApplication/Weather/Weather/Extensions/Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "A061FEBC-252F-49BF-8A7F-19D15FC2A1E5 - d512f21ffd6dd4fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static __C.NSUserDefaults.savedfavorites.modify : Swift.Array&lt;Weather.CurrentWeatherResponse&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tshedzamusandiwa/Documents/WeatherApplication/Weather/Weather/Extensions/Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "17">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
