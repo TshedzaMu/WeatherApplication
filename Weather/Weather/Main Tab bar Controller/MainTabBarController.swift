@@ -22,11 +22,7 @@ class MainTabBarController: UITabBarController {
     }
     
     func addSelectionDelegate() {
-        if let searchNav = viewControllers?[1] as? UINavigationController {
-            guard let searchController = searchNav.viewControllers.first as? SearchViewController else { return }
-            searchController.delegate = self
-        }
-        if let favoriteNav = viewControllers?[2] as? UINavigationController {
+        if let favoriteNav = viewControllers?[1] as? UINavigationController {
             guard let favoriteController = favoriteNav.viewControllers.first as? FavoritesViewController else { return }
             favoriteController.delegate = self
         }
