@@ -16,9 +16,9 @@ class HomeScreenViewContoller: UIViewController {
     @IBOutlet private var minimumTempLabel: UILabel!
     @IBOutlet private var currentTempLabel: UILabel!
     @IBOutlet private var maximimTempLabel: UILabel!
-    @IBOutlet weak var mainWeatherImageView: UIImageView!
-    @IBOutlet weak var mainWeatherStackView: UIStackView!
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet private weak var mainWeatherImageView: UIImageView!
+    @IBOutlet private weak var mainWeatherStackView: UIStackView!
+    @IBOutlet private weak var favoriteButton: UIButton!
     
     private lazy var viewModel = HomeScreenViewModel()
     
@@ -31,13 +31,10 @@ class HomeScreenViewContoller: UIViewController {
             DispatchQueue.main.async {
                 let lat = location.coordinate.latitude
                 let long = location.coordinate.longitude
-                print(lat)
-                print(long)
                 self.viewModel.lat = Float(lat)
                 self.viewModel.long = Float(long)
                 self.setupUI()
             }
-            
         }
     }
     

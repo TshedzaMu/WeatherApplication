@@ -7,6 +7,6 @@
 
 import Foundation
 
-class SearhViewModel {
+class SearchViewModel {
     
 }
