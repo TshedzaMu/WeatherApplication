@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    var delegate: MainTabBarDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

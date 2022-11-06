@@ -38,7 +38,7 @@ class Service {
     }
     
     func getWeatherForecast(long: Float, lat: Float, completed: @escaping forecastSuccess) {
-        let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?q=Johannesburg&appid=578feca10a590e86711974e85a838e7b&units=metric")!
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(long)&appid=578feca10a590e86711974e85a838e7b&units=metric")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             

@@ -14,7 +14,6 @@ class FavoritesViewController: UIViewController {
     
     var delegate: MainTabBarDelegate?
     
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var NoFavouritesText: UILabel!
     var viewModel = FavoritesViewModel()
     
@@ -37,12 +36,6 @@ class FavoritesViewController: UIViewController {
         } else {
             favoritesTableView.isHidden = false
             favoritesTableView.reloadData()
-        }
-    }
-    
-    func clearStackView() {
-        for view in stackView.subviews {
-            view.removeFromSuperview()
         }
     }
 }

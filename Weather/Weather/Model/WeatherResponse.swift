@@ -12,6 +12,7 @@ struct CurrentWeatherResponse: Codable, Equatable {
         return lhs.name == rhs.name
     }
     
+    var coord: Coordinates?
     var name: String?
     var main: MainData?
     var weather: [WeatherData]?
@@ -20,6 +21,11 @@ struct CurrentWeatherResponse: Codable, Equatable {
 struct WeatherData: Codable {
     var main: String?
     var description: String?
+}
+
+struct Coordinates: Codable {
+    var lon: Float?
+    var lat: Float?
 }
 
 struct MainData: Codable {
